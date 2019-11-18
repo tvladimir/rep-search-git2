@@ -20,13 +20,13 @@ namespace rep_search_api2.Controllers
         public BookmarkController(ILogger<BookmarkController> logger)
         {
             _logger = logger;
-             HttpContext.Session.Set<List<Bookmark>>(SessionKeyBookmarks, new List<Bookmark>()); 
         }
 
         [HttpGet]
         public List<Bookmark> Get()
         {
             List<Bookmark> _bookmarks = HttpContext.Session.Get<List<Bookmark>>(SessionKeyBookmarks); 
+            _bookmarks = _bookmarks == null ? new List<Bookmark>() : _bookmarks;
             return _bookmarks;
         }
 
@@ -34,7 +34,11 @@ namespace rep_search_api2.Controllers
         public Int32 Post(Bookmark bookmark)
         {
             List<Bookmark> _bookmarks = HttpContext.Session.Get<List<Bookmark>>(SessionKeyBookmarks); 
-            _bookmarks.Add(bookmark);
+            _bookmarks = _bookmarks == null ? new List<Bookmark>() : _bookmarks;
+            var sBookmark = _bookmarks.FirstOrDefault(_bookmark => _bookmark.name == bookmark.name);
+            if (sBookmark == null){
+                _bookmarks.Add(bookmark);
+            }
             HttpContext.Session.Set<List<Bookmark>>(SessionKeyBookmarks, _bookmarks); 
             return _bookmarks.Count();
         }

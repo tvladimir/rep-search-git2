@@ -1,0 +1,36 @@
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+html {
+  font-size: 14px;
+}
+.nav-link {
+  position: relative;
+}
+.nav-link .mat-icon{
+  top: 0.25em;
+  position: relative;
+}
+
+.count-bookmarks {
+  position: absolute;
+  top: .6em;
+  left: calc(100% - .25em);
+  padding: .2em .7em;
+  background-color: #caccceb3;
+  border-radius: 1em;
+}
+
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}

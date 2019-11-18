@@ -25,11 +25,15 @@
             [routerLinkActive]="['link-active']"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="nav-link text-dark" [routerLink]="['/']"><mat-icon class="icon menu-icon">search</mat-icon>Home</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
-              >Fetch data</a
+            <a class="nav-link text-dark" [routerLink]="['/bookmarks']"
+              >
+              <mat-icon class="icon menu-icon">bookmark</mat-icon>
+              Bookmarks
+              <span class="count-bookmarks">{{countBookmarks | async}}</span>
+              </a
             >
           </li>
         </ul>

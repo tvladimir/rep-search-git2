@@ -1,5 +1,5 @@
 export interface BookmarkDataModel {
-  Name ?: string;
-  AvatarUrl ?: string;
-  Url ?: string;
+  name ?: string;
+  avatarurl ?: string;
+  url ?: string;
 }

@@ -13,18 +13,10 @@
   </div>
 </div>
 <div class="search-list-holder">
+    <app-bookmarks-list [bookmarkList]="searchList"
+                        [isShowBookmarkButton]="true"
+                        (onBookmarkAdd)="onAddNewBookmark($event)"
+    >
+    </app-bookmarks-list>
     <app-default-loader></app-default-loader>
-      <ul class="search-list">
-          <li class="search-item" *ngFor="let searchItem of searchList">
-              <span class="avatar-holder">
-                  <img src="{{searchItem.AvatarUrl}}" alt="{{searchItem.Name}}">
-                </span>
-            <span class="item-name">{{searchItem.Name}}</span>
-
-            <button type="button" class="bookmark-button" [appAddBookmark]="searchItem" (onBookmarkAdd)="addNewBookmark($event)">
-                <mat-icon matPrefix>bookmark</mat-icon>
-            </button>
-          </li>
-        </ul>
-
 </div>

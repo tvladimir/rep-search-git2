@@ -7,24 +7,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatTabsModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { HomeComponent } from './pages/home/home.component';
 
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { DefaultLoaderComponent } from './components/default-loader/default-loader.component';
 import { AddBookmarkDirective } from './directives/add-bookmark/add-bookmark.directive';
 import { LoaderService } from './services/loader/loader.service';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { BookmarksComponent } from './pages/bookmarks/bookmarks.component';
+import { BookmarksListComponent } from './components/bookmarks-list/bookmarks-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    
-    FetchDataComponent,
     DefaultLoaderComponent,
-    AddBookmarkDirective
+    AddBookmarkDirective,
+    BookmarksComponent,
+    BookmarksListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -40,7 +41,7 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     MatListModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'bookmarks', component: BookmarksComponent }
     ]),
   ],
   providers: [
