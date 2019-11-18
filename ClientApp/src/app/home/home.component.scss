@@ -1,0 +1,81 @@
+.search-input-holder {
+    border-bottom: solid 1px #939698;
+    position: relative;
+    display: block;
+    padding: 1em 0 0.5em 0;
+  }
+  .search-input {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .search-button {
+    position: absolute;
+    top: -.1em;
+    left: calc(100% + 0.3em);
+    padding: 0.5em;
+    border: none;
+    background: none;
+    background-color: #caccce;
+  }
+  .search-button:disabled{opacity: .7;}
+  
+  .search-list-holder {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: calc(100vh - 4em);
+    overflow: auto;
+  }
+  .search-list{position: relative;display: block;width: 100%;padding: 1em;box-sizing: border-box;}
+  .search-item{position: relative;
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0.5em auto;
+    padding: 1em 6px 1em 0;
+    overflow: hidden;
+    border-bottom: solid 1px grey;
+  }
+  
+  .avatar-holder{
+    float: right;
+    position: relative;
+    width: 4em;
+    height: 4em;
+    border-radius: 2em;
+    overflow: hidden;
+    box-shadow: 0 0 6px #ccc;
+  }
+  .avatar-holder img{
+    position: absolute;
+    display: block;
+    width: 100%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+  .item-name{
+    color:grey;
+    float:right;
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: calc(100% - 4.5em - 6px);
+  padding: 1.5em 0 0 0;
+  }
+  
+  .bookmark-button{position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 2em;
+    height: 2em;
+    background-color: transparent;
+    border: none;
+    color: #939698;
+    cursor: pointer;
+  }
+  
+  

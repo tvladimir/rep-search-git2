@@ -1,0 +1,30 @@
+<div class="search-input-holder">
+  <div class="search-input">
+    <mat-form-field>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput
+            type="search"
+            placeholder="search here"
+            (keydown.enter)="searchFromGit()"
+            [(ngModel)]="searchInput"
+            class="search-input">
+      <button class="search-button" (click)="searchFromGit()" [disabled]="isLoading | async">Search</button>
+    </mat-form-field>
+  </div>
+</div>
+<div class="search-list-holder">
+    <app-default-loader></app-default-loader>
+      <ul class="search-list">
+          <li class="search-item" *ngFor="let searchItem of searchList">
+              <span class="avatar-holder">
+                  <img src="{{searchItem.AvatarUrl}}" alt="{{searchItem.Name}}">
+                </span>
+            <span class="item-name">{{searchItem.Name}}</span>
+
+            <button type="button" class="bookmark-button" [appAddBookmark]="searchItem" (onBookmarkAdd)="addNewBookmark($event)">
+                <mat-icon matPrefix>bookmark</mat-icon>
+            </button>
+          </li>
+        </ul>
+
+</div>
