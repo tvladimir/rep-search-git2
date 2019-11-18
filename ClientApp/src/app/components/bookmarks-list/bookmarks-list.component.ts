@@ -23,7 +23,9 @@ export class BookmarksListComponent implements OnInit {
 
   constructor(
     private loaderService: LoaderService,
-  ) { }
+  ) {
+
+  }
 
   ngOnInit() {
   }
