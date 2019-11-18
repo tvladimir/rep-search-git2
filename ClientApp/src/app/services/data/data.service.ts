@@ -8,6 +8,9 @@ import { BookmarkDataModel } from '../../models/BookmarkData.model';
 @Injectable({
   providedIn: 'root'
 })
+
+// Service for all API requests
+
 export class DataService {
   public countBookmarks = new BehaviorSubject<number>(0);
   private baseUrl: string;
@@ -19,6 +22,7 @@ export class DataService {
     this.baseUrl = baseUrl;
   }
 
+  //// Get response from GIT API
   searchFromGit(searchString: string = ''): Observable<any> {
     const searchUrl = `${environment.apiSearchUrl}q=${searchString}`;
     return this.httpClient.get(searchUrl).pipe(
@@ -26,20 +30,24 @@ export class DataService {
     );
   }
 
+  //// Save new Bookmark in Session
   addNewBookmark(bookmark: BookmarkDataModel){
     return this.httpClient.post(this.baseUrl  + 'bookmark', bookmark);
   }
 
+  //// Get All Bookmarks from Session
   getSessionBookmarks(){
     return this.httpClient.get(this.baseUrl  + 'bookmark').pipe(
       catchError(this.handleError)
     );
   }
 
+  //// Update Subject of Count Bookmarks (UI only)
   updateSessionCountBookmarks(newValue: number) {
     this.countBookmarks.next(newValue);
   }
 
+  //// handleError for Http requests
   handleError(error: HttpErrorResponse) {
     let errorMessage;
     if (error.error instanceof ErrorEvent) {

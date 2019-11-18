@@ -32,6 +32,8 @@ import { BookmarksListComponent } from './components/bookmarks-list/bookmarks-li
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+
+    // Inport Angular Material Modules - more than necessary
     MatInputModule,
     MatTabsModule,
     MatCheckboxModule,
@@ -39,6 +41,8 @@ import { BookmarksListComponent } from './components/bookmarks-list/bookmarks-li
     MatToolbarModule,
     MatIconModule,
     MatListModule,
+
+    // Angular App Routing
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'bookmarks', component: BookmarksComponent }
@@ -46,6 +50,8 @@ import { BookmarksListComponent } from './components/bookmarks-list/bookmarks-li
   ],
   providers: [
     LoaderService,
+
+    // Implementing of LoaderInterceptor - for (Show, Hide) loader on every request
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

@@ -8,6 +8,9 @@ import { LoaderService } from 'src/app/services/loader/loader.service';
   templateUrl: './bookmarks-list.component.html',
   styleUrls: ['./bookmarks-list.component.scss']
 })
+
+// BookmarksList component - just list of Bookmarks
+// Used on Home & bookmarks pages
 export class BookmarksListComponent implements OnInit {
 
   @Input() bookmarkList: BookmarkDataModel[];

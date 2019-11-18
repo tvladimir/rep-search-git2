@@ -20,6 +20,8 @@ export class NavMenuComponent implements OnInit {
   ngOnInit() {
     this.dataService.getSessionBookmarks().subscribe(data => {
       const sessionBookmarks: BookmarkDataModel[] = <BookmarkDataModel[]>data;
+
+      // Update Count Bookmarks (UI only)
       this.dataService.updateSessionCountBookmarks(sessionBookmarks.length);
     });
   }

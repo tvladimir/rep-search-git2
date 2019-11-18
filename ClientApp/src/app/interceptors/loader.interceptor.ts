@@ -4,6 +4,8 @@ import { Observable } from "rxjs";
 import { finalize } from "rxjs/operators";
 import { LoaderService } from "../services/loader/loader.service";
 @Injectable()
+
+// Set (Show, Hide) Loader on every request
 export class LoaderInterceptor implements HttpInterceptor {
     constructor(public loaderService: LoaderService) { }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

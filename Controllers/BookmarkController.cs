@@ -22,6 +22,7 @@ namespace rep_search_api2.Controllers
             _logger = logger;
         }
 
+        //Get Bookmark list from Session - return List
         [HttpGet]
         public List<Bookmark> Get()
         {
@@ -30,6 +31,7 @@ namespace rep_search_api2.Controllers
             return _bookmarks;
         }
 
+        //Save unique Bookmark in Session list - return Count
         [HttpPost]
         public Int32 Post(Bookmark bookmark)
         {
@@ -45,6 +47,7 @@ namespace rep_search_api2.Controllers
 
     }
 
+    //Extensions for (Set, Get) methods from Session
     public static class SessionExtensions 
         { 
             public static void Set<T>(this ISession session, string key, T value) 

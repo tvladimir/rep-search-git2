@@ -27,13 +27,16 @@ namespace rep_search_api2
                 configuration.RootPath = "ClientApp/dist";
             });
 
-            services.AddDistributedMemoryCache();//To Store session in Memory, This is default implementation of IDistributedCache    
+            //Add tow rows for Session
+            //To Store session in Memory, This is default implementation of IDistributedCache
+            services.AddDistributedMemoryCache();    
             services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //Add tow rows for Session
             app.UseCookiePolicy();      
             app.UseSession(); 
             

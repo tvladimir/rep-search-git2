@@ -20,9 +20,13 @@ export class BookmarksComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // Onload get Bookmarks from Session (from WebAPI)
     this.sessionBookmarks = [];
     this.dataService.getSessionBookmarks().subscribe(result => {
+
       this.sessionBookmarks = <BookmarkDataModel[]>result;
+
+      // Update Count Bookmarks (UI only)
       this.dataService.updateSessionCountBookmarks(this.sessionBookmarks.length);
     });
   }
